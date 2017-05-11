@@ -16,6 +16,7 @@ public class OperatorsTest {
 		
 		System.out.println(c.computeUnary(10, c.toPower2));
 		System.out.println(c.computeUnary(10, c.toPower3));
+		System.out.println(c.computeUnary(10, c.sqrt));
 		
 		System.out.println();
 		

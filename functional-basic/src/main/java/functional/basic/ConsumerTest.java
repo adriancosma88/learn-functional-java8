@@ -2,6 +2,7 @@ package functional.basic;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 /**
@@ -24,6 +25,11 @@ public class ConsumerTest {
 		}
 		
 		//declared inside class
+		integersList.forEach(x -> {
+			System.out.println(x);
+			System.out.println(x * 2);
+		});
+		
 		integersList.forEach(new SimpleDisplay<Integer>());
 		integersList.forEach(new SimpleDisplay<>());
 		integersList.forEach(new DisplayDouble());
@@ -36,11 +42,27 @@ public class ConsumerTest {
 		
 		//declared as an object
 		integersList.forEach(displayTriple);
+		
+		biDisplay(1000, 5.0, basicSalary);		
+		
 	}
 
+	private static void basicSalayAlgo (Integer x, double y) {
+		double salariuFinal = x - x * y /100;
+		System.out.println(salariuFinal);
+	}
+	
+	private static void biDisplay(Integer salariu, Double procent,
+			BiConsumer<Integer, Double> biConsumer) {
+		biConsumer.accept(salariu, procent);
+	}
+	
 	private static void displayTriple(Integer x) {
 		System.out.println(x * 3);
 	}
+	
+	private static BiConsumer<Integer, Double> basicSalary =
+			(x, y) -> basicSalayAlgo(x, y);
 	
 	private static Consumer<Integer> displayTriple = x -> System.out.println(x * 3);
 }

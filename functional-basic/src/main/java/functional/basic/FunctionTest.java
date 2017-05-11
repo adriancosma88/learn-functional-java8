@@ -61,7 +61,8 @@ class SalaryCalculator {
 	public void displaySalary(Employee e, double tax, 
 			Function<Employee, Double> salaryCalculator) {
 		
-		double salary = substractTax(salaryCalculator.apply(e), tax);		
+		double salary = substractTax(salaryCalculator.apply(e), tax);	
+		
 		System.out.println("The monthly salary for " + e.getName() 
 				+ " is " + salary);
 	}

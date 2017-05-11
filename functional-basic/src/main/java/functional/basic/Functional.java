@@ -10,8 +10,7 @@ public class Functional {
 
 		thread.start();
 		
-		Runnable r = () -> System.out.println("from new thread");
-		Thread t2 = new Thread(r);
+		Thread t2 = new Thread(() -> System.out.println("from new thread"));
 		t2.start();
 		
 		System.out.println("in main");

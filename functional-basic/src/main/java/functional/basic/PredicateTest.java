@@ -14,6 +14,8 @@ public class PredicateTest {
 		//criteria by mark
 		Predicate<ExamAttendee> peMeritate = a -> a.getMark() > 4;
 		
+		displayExamResult(new ExamAttendee("Ionescu", 6), peMeritate);
+		
 		//criteria by name
 		Predicate<ExamAttendee> cunoastePeCineva = a -> a.getName().equals("Popescu");
 		
@@ -23,7 +25,6 @@ public class PredicateTest {
 		//criteria by name or high mark
 		Predicate<ExamAttendee> profesorNaspa = cunoastePeCineva.or(chiarStie);
 		
-		displayExamResult(new ExamAttendee("Ionescu", 6), peMeritate);
 		displayExamResult(new ExamAttendee("Ionescu", 6), profesorNaspa);
 		displayExamResult(new ExamAttendee("Popescu", 6), profesorNaspa);
 		displayExamResult(new ExamAttendee("Ionescu", 9), profesorNaspa);

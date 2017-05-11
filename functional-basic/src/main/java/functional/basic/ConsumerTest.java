@@ -46,7 +46,6 @@ public class ConsumerTest {
 }
 
 class SimpleDisplay<X> implements Consumer<X> {
-	@Override
 	public void accept(X x) {
 		System.out.println(x);
 	}
